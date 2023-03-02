@@ -1,6 +1,6 @@
 module.exports = (connection, DataTypes) => {
     const schema = {
-        name:DataTypes.STRING,
+        name: DataTypes.STRING,
         email: DataTypes.STRING,
     };
 
