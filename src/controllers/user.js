@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Progress } = require('../models');
 
 const createUser = (req, res) => {
     const newUser = req.body;
@@ -17,7 +17,7 @@ const getUsers = (_, res) => {
 const getUserById = (req, res) => {
     const { id } = req.params;
 
-    User.findByPk(id).then(user => {
+    User.findByPk(id, { include: Progress }).then(user => {
         if (!user) {
             res.status(404).json({ error: 'No account found.' });
         } else {
