@@ -17,7 +17,7 @@ const getUsers = (_, res) => {
 const getUserById = (req, res) => {
     const { id } = req.params;
 
-    User.findByPk(id, { include: Progress }).then(user => {
+    User.findByPk(id).then(user => {
         if (!user) {
             res.status(404).json({ error: 'No account found.' });
         } else {
