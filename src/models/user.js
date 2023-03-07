@@ -1,7 +1,8 @@
 module.exports = (connection, DataTypes) => {
     const schema = {
-        name: DataTypes.STRING,
+        username: DataTypes.STRING,
         email: DataTypes.STRING,
+        password: DataTypes.STRING,
     };
 
     const UserModel = connection.define('User', schema);

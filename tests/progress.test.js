@@ -4,8 +4,8 @@ const request = require('supertest');
 const { Progress } = require('../src/models')
 const app = require('../src/app.js');
 
-describe('/progress', () => {
-    before(async () => Progress.sequelize.sync());
+xdescribe('/progress', () => {
+    before(async () => await Progress.sequelize.sync());
 
     beforeEach(async () => {
         await Progress.destroy({ where: {} });

@@ -1,4 +1,4 @@
-const { User, Progress } = require('../models');
+const { User } = require('../models');
 
 const createUser = (req, res) => {
     const newUser = req.body;
