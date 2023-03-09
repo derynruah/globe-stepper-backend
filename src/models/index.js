@@ -15,7 +15,6 @@ const setupDatabase = () => {
     const User = UserModel(connection, Sequelize);
     const Progress = ProgressModel(connection, Sequelize);
 
-    Progress.belongsTo(User);
 
     connection.sync({ alter: true });
     return {
