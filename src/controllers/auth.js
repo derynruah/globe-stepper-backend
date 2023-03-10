@@ -44,10 +44,9 @@ const signIn = (req, res) => {
 
       res.status(200).send({
         id: user.id,
-        username: user.username,
         email: user.email,
         accessToken: token,
-        message: `Welcome ${user.username}, you're now a GlobeStepper!`,
+        message: `Welcome ${user.email}, you're now a GlobeStepper!`,
       });
     })
     .catch((err) => {
