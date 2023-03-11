@@ -10,7 +10,9 @@ const register = (req, res) => {
     email: req.body.email,
     password: bcrypt.hashSync(req.body.password, 8),
   })
-    .then(res.send({ message: 'User was registered successfully!' }))
+    .then(() => {
+      res.send({ message: 'User was registered successfully!' });
+    })
     .catch((err) => {
       res.status(500).send({ message: err.message });
     });
@@ -54,4 +56,4 @@ const signIn = (req, res) => {
     });
 };
 
-module.exports = { register, signIn }
+module.exports = { register, signIn };
