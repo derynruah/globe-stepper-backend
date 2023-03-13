@@ -1,45 +1,10 @@
 module.exports = (connection, DataTypes) => {
     const schema = {
-        staticId: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                notNull: {
-                    args: true,
-                    msg: 'Challenge needs a static Id.',
-                },
-            },
-        },
-        title: {
-            type: DataTypes.STRING, 
-            allowNull: false,
-            validate: {
-                notNull: {
-                    args: true,
-                    msg: 'Challenge needs a title.',
-                },
-            },
-        },
-        distanceKM: {
-            type: DataTypes.INTERGER,
-            allowNull: false, 
-            validate: {
-                notNull: {
-                    args: true,
-                    msg: 'Challenge needs a distance.',
-                },
-            },
-        },
-        description: {
-            type: DataTypes.MEDIUMTEXT,
-            allowNull: false,
-            validate: {
-                notNull: {
-                    args: true,
-                    msg: 'Challenge needs a description',
-                },
-            },
-        },
+        imageUrl: { type: DataTypes.STRING, },
+        title: { type: DataTypes.STRING, },
+        distanceKM: { type: DataTypes.STRING, },
+        distanceMi: { type: DataTypes.STRING, },
+        description: { type: DataTypes.STRING, },
     };
 
     const ChallengeModel = connection.define('Challenge', schema);

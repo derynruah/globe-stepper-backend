@@ -1,7 +1,8 @@
 const { Challenge } = require('../models');
 
 const createChallenge = (req, res) => {
-    const newChallenge = req.body;
+    const newChallenge = (req.body);
+    console.log(newChallenge);
 
     Challenge
     .create(newChallenge)
