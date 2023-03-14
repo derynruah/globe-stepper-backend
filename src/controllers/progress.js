@@ -1,7 +1,7 @@
 const { Progress } = require('../models');
 
 const createProgress = (req, res) => {
-    const newProgress = req.body;
+    const newProgress = (req.body);
 
     Progress
     .create(newProgress)
