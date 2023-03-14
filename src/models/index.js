@@ -18,6 +18,7 @@ const setupDatabase = () => {
     const Challenge = ChallengeModel(connection, Sequelize);
 
     Challenge.belongsTo(User);
+    Progress.belongsTo(User);
 
 
     connection.sync({ alter: true });
