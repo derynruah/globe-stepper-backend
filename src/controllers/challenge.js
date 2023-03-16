@@ -15,16 +15,17 @@ const getChallenge = (_, res) => {
     });
 }
 
-const getChallengeById = (req, res) => {
-    const { id } = req.params;
+const getChallengeByUserId = async (req, res) => {
+    const { user } = req.params;
 
-    Challenge.findByPk(id).then(challenge => {
-        if (!challenge) {
-            res.status(404).json({ error: 'No challenge found.' });
-        } else {
-            res.status(200).json(challenge);
-        }
-    });
+    try{
+      const getChallengeByUserId = await Challenge.findAll({
+        where: { UserId: user},
+      });
+      res.status(200).json(getChallengeByUserId);
+    } catch (err) {
+      res.status(500).json(err);
+    }
 }
 
 const updateChallenge = (req, res) => {
@@ -65,4 +66,4 @@ const deleteChallenge = (req, res) => {
 }
 
 
-module.exports = { createChallenge, getChallenge, getChallengeById, updateChallenge, deleteChallenge }
+module.exports = { createChallenge, getChallenge, getChallengeByUserId, updateChallenge, deleteChallenge }
