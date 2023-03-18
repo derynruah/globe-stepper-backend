@@ -1,4 +1,4 @@
-<p align="center"><img height="200" src="https://github.com/derynruah/globe-stepper-backend/blob/main/GlobeStepper%20(1).png">
+<p align="center"><img height="200" src="https://github.com/derynruah/globe-stepper-backend/blob/main/logo.png">
 </p>
 
 # Globe-Stepper API
