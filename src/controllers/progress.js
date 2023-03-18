@@ -8,16 +8,17 @@ const createProgress = (req, res) => {
     .then(newProgressCreated => res.status(201).json(newProgressCreated));
 }
 
-const getProgressById = (req, res) => {
-    const { id } = req.params;
+const getProgressByUserIdAndChallengeId = async (req, res) => {
+    const { user, challenge } = req.params;
 
-    Progress.findByPk(id).then(progress => {
-        if (!progress) {
-            res.status(404).json({ error: 'No progress found.'});
-        } else {
-            res.status(200).json(progress);
-        }
-    });
+    try{
+      const getProgressByUserIdAndChallengeId = await Progress.findAll({
+        where: { UserId: user, ChallengeId: challenge },
+      });
+      res.status(200).json(getProgressByUserIdAndChallengeId);
+    } catch (err) {
+      res.status(500).json(err);
+    }
 }
 
 const updateProgress = (req, res) => {
@@ -57,4 +58,4 @@ const deleteProgress = (req, res) => {
     });
 }
 
-module.exports = { createProgress, getProgressById, updateProgress, deleteProgress }
+module.exports = { createProgress, getProgressByUserIdAndChallengeId, updateProgress, deleteProgress }

@@ -8,8 +8,8 @@ router
     .post(progressController.createProgress);
 
 router
-    .route('/:id')
-    .get(progressController.getProgressById)
+    .route('/UserId/:user/ChallengeId/:challenge')
+    .get(progressController.getProgressByUserIdAndChallengeId)
     .patch(progressController.updateProgress)
     .delete(progressController.deleteProgress);
 
