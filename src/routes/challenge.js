@@ -8,9 +8,11 @@ router
     .get(challengeController.getChallenge)
     .post(challengeController.createChallenge);
 
+
+// this router gets the challenge data by the user id
 router
-    .route('/:id')
-    .get(challengeController.getChallengeById)
+    .route('/UserId/:user')
+    .get(challengeController.getChallengeByUserId)
     .patch(challengeController.updateChallenge)
     .delete(challengeController.deleteChallenge);
     

@@ -19,6 +19,7 @@ const setupDatabase = () => {
 
     Challenge.belongsTo(User);
     Progress.belongsTo(User);
+    Progress.belongsTo(Challenge);
 
 
     connection.sync({ alter: true });
