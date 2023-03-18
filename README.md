@@ -1,4 +1,8 @@
+<p align="center"><img height="200" src="https://github.com/derynruah/globe-stepper-backend/blob/main/GlobeStepper%20(1).png">
+</p>
+
 # Globe-Stepper API
+
 
 This is an Express.js API created as part of the final project for the Command Shift full-stack development boot-camp final project. Created by Deryn Rushworth and Carla Slattery
 
@@ -74,3 +78,4 @@ Use Postman to interact with the database send requests to ```localhost:4000/eve
 | ----- | ----- |
 |Deryn Rushworth|https://github.com/derynruah|
 |Carla Slattery|https://github.com/CarlaSlattery|
+
