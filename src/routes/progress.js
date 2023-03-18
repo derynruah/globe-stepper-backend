@@ -5,10 +5,11 @@ const router = express.Router();
 
 router
     .route('/')
-    .post(progressController.createProgress);
+    .post(progressController.createProgress)
+    .delete(progressController.deleteProgress);
 
 router
-    .route('/UserId/:user/ChallengeId/:challenge')
+    .route('/UserId/:user')
     .get(progressController.getProgressByUserIdAndChallengeId)
     .patch(progressController.updateProgress)
     .delete(progressController.deleteProgress);

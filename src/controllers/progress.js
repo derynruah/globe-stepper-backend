@@ -9,11 +9,11 @@ const createProgress = (req, res) => {
 }
 
 const getProgressByUserIdAndChallengeId = async (req, res) => {
-    const { user, challenge } = req.params;
+    const { user } = req.params;
 
     try{
       const getProgressByUserIdAndChallengeId = await Progress.findAll({
-        where: { UserId: user, ChallengeId: challenge },
+        where: { UserId: user,  },
       });
       res.status(200).json(getProgressByUserIdAndChallengeId);
     } catch (err) {
